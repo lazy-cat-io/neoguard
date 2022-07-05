@@ -33,6 +33,7 @@
     "telegram",
     "telegram-bot"
   ],
+  "main": "lib/neoguard.js",
   "directories": {
     "lib": "./lib"
   },
