@@ -1,6 +1,6 @@
 {
   "name": "@io.lazy-cat/neoguard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Telegram NeoGuard bot",
   "license": "MIT",
   "author": "Ilshat Sultanov <ilshat@sultanov.team>",
@@ -67,8 +67,7 @@
     "build": "npm run clean && npm run shadow:build",
     "publish": "npm run shadow:publish && npm run supabase:publish"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "concurrently": "^7.2.2",
     "npm-check-updates": "^15.0.3",
