@@ -1,0 +1,18 @@
+{:paths   ["src/main/clojure" "src/main/resources"]
+
+ :deps    {thheller/shadow-cljs {:mvn/version "2.19.5"}
+           org.babashka/sci     {:git/url "https://github.com/babashka/sci"
+                                 :git/sha "a046922df03fc689ec74771d26dd149d339dae31"}}
+
+ :aliases {:develop          {:extra-paths ["src/develop/clojure" "src/develop/resources"]
+                              :extra-deps  {org.clojure/clojure       {:mvn/version "1.12.0-alpha1"}
+                                            org.clojure/clojurescript {:mvn/version "1.11.60"}}}
+
+           :test             {:extra-paths ["src/test/clojure" "src/test/resources"]}
+
+           :nop              {:extra-deps {org.slf4j/slf4j-nop {:mvn/version "1.7.36"}}}
+
+           :outdated         {:extra-deps {com.github.liquidz/antq {:mvn/version "1.8.847"}}
+                              :main-opts  ["--main" "antq.core"]}
+
+           :outdated/upgrade {:main-opts ["--main" "antq.core" "--upgrade" "--force"]}}}

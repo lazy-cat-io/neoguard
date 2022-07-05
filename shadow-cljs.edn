@@ -1,0 +1,12 @@
+{:deps   {:aliases [:develop :test :nop]}
+
+ :nrepl  {:init-ns user}
+
+ :builds {:neoguard {:js-options       {:js-provider :import}
+                     :compiler-options {:infer-externs :auto}
+                     :target           :esm
+                     :runtime          :node
+                     :output-dir       "lib"
+                     :modules          {:neoguard {:exports {evalString neoguard.core/eval-string
+                                                             evalFile   neoguard.core/eval-file}}}
+                     :build-hooks      [(shadow.cljs.build-report/hook {:output-to "report.html"})]}}}
