@@ -58,7 +58,7 @@
 
 (defn eval-string
   [text]
-  (scia/eval-string* ctx text))
+  (sci/eval-string ctx text))
 
 
 (defn eval-file
@@ -68,4 +68,4 @@
             (.then #(.text %)))
         (js/Deno.readTextFile url))
       (.then (fn [text]
-               (eval-string text)))))
+               (scia/eval-string* ctx text)))))
