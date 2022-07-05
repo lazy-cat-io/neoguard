@@ -14,6 +14,7 @@ supabase
 .java-version
 .nvmrc
 .npmrc
+deps.edn
 *.iml
 report.html
 shadow-cljs.edn
