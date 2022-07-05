@@ -33,10 +33,15 @@
     "telegram",
     "telegram-bot"
   ],
-  "main": "lib/neoguard.js",
+  "main": "index.ts",
   "directories": {
     "lib": "./lib"
   },
+  "files": [
+    "readme.md",
+    "lib",
+    "index.ts"
+  ],
   "scripts": {
     "version:current": "npm show . version",
     "version:bump:patch": "npm version patch",
