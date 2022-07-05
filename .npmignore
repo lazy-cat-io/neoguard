@@ -1,6 +1,7 @@
 .clj-kondo
 .cpcache
 .idea
+.shadow-cljs
 node_modules
 src
 supabase
