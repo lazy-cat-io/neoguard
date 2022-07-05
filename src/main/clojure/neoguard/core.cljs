@@ -57,19 +57,15 @@
 
 
 (defn eval-string
-  ([text]
-   (eval-string ctx text))
-  ([ctx text]
-   (scia/eval-string* ctx text)))
+  [text]
+  (scia/eval-string* ctx text))
 
 
 (defn eval-file
-  ([url]
-   (eval-file ctx url))
-  ([ctx url]
-   (-> (if (str/starts-with? url "http")
-         (-> (js/fetch url)
-             (.then #(.text %)))
-         (js/Deno.readTextFile url))
-       (.then (fn [text]
-                (eval-string ctx text))))))
+  [url]
+  (-> (if (str/starts-with? url "http")
+        (-> (js/fetch url)
+            (.then #(.text %)))
+        (js/Deno.readTextFile url))
+      (.then (fn [text]
+               (eval-string text)))))
