@@ -15,6 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/lazy-cat-io/neoguard.git"
   },
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "homepage": "https://github.com/lazy-cat-io/neoguard#readme",
   "bugs": {
     "url": "https://github.com/lazy-cat-io/neoguard/issues"
