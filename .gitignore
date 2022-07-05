@@ -16,6 +16,7 @@ node_modules
 lib
 dist
 target
+report.html
 
 .env.local
 .env.production
