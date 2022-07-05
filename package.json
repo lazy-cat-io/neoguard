@@ -1,6 +1,6 @@
 {
   "name": "@io.lazy-cat/neoguard",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Telegram NeoGuard bot",
   "license": "MIT",
   "author": "Ilshat Sultanov <ilshat@sultanov.team>",
@@ -57,7 +57,7 @@
     "shadow:lint:fix": "cljstyle fix src",
     "shadow:watch": "npx shadow-cljs watch neoguard",
     "shadow:build": "npx shadow-cljs release neoguard",
-    "shadow:publish": "npm run shadow:build && npm publish",
+    "shadow:publish": "npm publish",
     "clean": "npm run shadow:clean",
     "lint": "npm run shadow:lint && npm run supabase:lint",
     "lint:fix": "npm run shadow:lint:fix && npm run supabase:lint:fix",
