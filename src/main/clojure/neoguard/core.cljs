@@ -62,7 +62,7 @@
 
 (defn sanitize
   [s]
-  (some-> s (str/replace #"“(.+)“" "\"$1\"")))
+  (some-> s (str/replace #"[“”]" "\"")))
 
 
 (defn eval-string
