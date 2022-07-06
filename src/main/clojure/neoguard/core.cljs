@@ -58,7 +58,7 @@
 
 (defn eval-string
   [text]
-  (sci/eval-string ctx text))
+  (sci/eval-string text ctx))
 
 
 (defn eval-file
