@@ -4,6 +4,8 @@
     [clojure.set :as set]
     [clojure.string :as str]
     [goog.object :as gobj]
+    [goog.string :as gstr]
+    [goog.string.format]
     [sci.async :as scia]
     [sci.core :as sci]
     [shadow.esm :as esm]))
@@ -69,3 +71,17 @@
         (js/Deno.readTextFile url))
       (.then (fn [text]
                (scia/eval-string* ctx text)))))
+
+
+(defn generate-captcha
+  ([]
+   (generate-captcha 20))
+  ([n]
+   (let [operators {"+" +, "-" -}
+         operator  (rand-nth (keys operators))
+         f         (get operators operator)
+         args      [(rand-int n) (rand-int n)]]
+     #js {:captcha (->> args
+                        (str/join " ")
+                        (gstr/format "(%s %s)" operator))
+          :answer  (apply f args)})))
