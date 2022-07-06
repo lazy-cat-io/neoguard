@@ -60,9 +60,19 @@
 (sci/alter-var-root sci/print-fn (constantly *print-fn*))
 
 
+(defn sanitize
+  [s]
+  (some-> s (str/replace #"“(.+)“" "\"$1\"")))
+
+
 (defn eval-string
   [text]
-  (sci/eval-string text ctx))
+  (try
+    (sci/eval-string text ctx)
+    (catch :default _
+      (-> text
+          (sanitize)
+          (sci/eval-string ctx)))))
 
 
 (defn eval-file
