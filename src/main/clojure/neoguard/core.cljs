@@ -42,15 +42,17 @@
 (def ctx
   (sci/init {:async-load-fn async-load-fn
              :namespaces    {'clojure.core   {'require scia/require}
-                             'clojure.string {'upper-case str/upper-case
+                             'clojure.string {'capitalize str/capitalize
                                               'lower-case str/lower-case
-                                              'capitalize str/capitalize
-                                              'spit       str/split}
-                             'clojure.set    {'intersection set/intersection
+                                              'spit       str/split
+                                              'upper-case str/upper-case}
+                             'clojure.set    {'difference   set/difference
+                                              'intersection set/intersection
                                               'map-invert   set/map-invert
-                                              'difference   set/difference
-                                              'union        set/union
-                                              'rename-keys  set/rename-keys}}
+                                              'rename-keys  set/rename-keys
+                                              'union        set/union}}
+             :aliases       {'str 'clojure.string
+                             'set 'clojure.set}
              :classes       {'js goog/global :allow :all}}))
 
 
