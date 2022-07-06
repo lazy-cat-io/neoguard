@@ -8,4 +8,4 @@
   ([]
    (cljs-repl :neoguard))
   ([build-id]
-   (shadow/repl build-id)))
+   (shadow/node-repl {:build-id build-id})))
