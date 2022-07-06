@@ -7,6 +7,12 @@
                      :target           :esm
                      :runtime          :node
                      :output-dir       "lib"
-                     :modules          {:neoguard {:exports {evalString neoguard.core/eval-string
-                                                             evalFile   neoguard.core/eval-file}}}
-                     :build-hooks      [(shadow.cljs.build-report/hook {:output-to "report.html"})]}}}
+                     :modules          {:neoguard {:exports {evalString      neoguard.core/eval-string
+                                                             evalFile        neoguard.core/eval-file
+                                                             generateCaptcha neoguard.core/generate-captcha}}}
+                     :build-hooks      [(shadow.cljs.build-report/hook {:output-to "report.html"})]}
+
+          :test     {:target    :node-test
+                     :output-to "target/neoguard.js"
+                     :ns-regexp "-test$"
+                     :autorun   true}}}
