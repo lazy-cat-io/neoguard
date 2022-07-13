@@ -11,11 +11,6 @@ bot.command("start", (ctx) => {
   return ctx.reply("Welcome! Up and running.");
 });
 
-bot.command("ping", (ctx) => {
-  console.log("ping", ctx);
-  return ctx.reply(`Pong!\nThe server time is ${new Date().toISOString()}`);
-});
-
 bot.command("captcha", (ctx) => {
   console.log("captcha", ctx);
   const captcha = generateCaptcha();
@@ -29,7 +24,7 @@ bot.on("message:text", (ctx) => {
   const res = evalMessage(msg);
   return ctx.reply(res, {
     reply_to_message_id: ctx.message.message_id,
-    parse_mode: "HTML",
+    parse_mode: "MarkdownV2",
   });
 });
 
@@ -42,7 +37,7 @@ bot.on(
       const res = evalMessage(msg);
       return ctx.reply(res, {
         reply_to_message_id: ctx.editedMessage.message_id,
-        parse_mode: "HTML",
+        parse_mode: "MarkdownV2",
       });
     }
   },
