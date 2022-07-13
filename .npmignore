@@ -3,6 +3,7 @@
 .idea
 .shadow-cljs
 node_modules
+lib/cljs-runtime
 src
 supabase
 .cljstyle
