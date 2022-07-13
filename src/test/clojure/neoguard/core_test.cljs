@@ -20,3 +20,11 @@
         (is (string? captcha))
         (is (int? answer))
         (is (= answer (sut/eval-string captcha)))))))
+
+
+(deftest as-markdown-code-block-test
+  (testing "strings in the code block must be quoted"
+    (is (= "```clojure\n\"foo-42\"\n```" (->> "(str \"foo-\" 42)" (sut/eval-string) (sut/as-markdown-code-block))))
+    (is (= "```clojure\n42\n```" (->> "(inc 41)" (sut/eval-string) (sut/as-markdown-code-block))))
+    (is (= "Malformed input:\n```clojure\n\"foo-42\"\n```" (->> "(str \"foo-\" 42)" (sut/eval-string) (sut/as-markdown-code-block "Malformed input:"))))
+    (is (= "Malformed input:\n```clojure\n42\n```" (->> "(inc 41)" (sut/eval-string) (sut/as-markdown-code-block "Malformed input:"))))))

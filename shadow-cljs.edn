@@ -7,9 +7,10 @@
                      :target           :esm
                      :runtime          :node
                      :output-dir       "lib"
-                     :modules          {:neoguard {:exports {evalString      neoguard.core/eval-string
-                                                             evalFile        neoguard.core/eval-file
-                                                             generateCaptcha neoguard.core/generate-captcha}}}
+                     :modules          {:neoguard {:exports {evalString          neoguard.core/eval-string
+                                                             evalFile            neoguard.core/eval-file
+                                                             generateCaptcha     neoguard.core/generate-captcha
+                                                             asMarkdownCodeBlock neoguard.core/as-markdown-code-block}}}
                      :build-hooks      [(shadow.cljs.build-report/hook {:output-to "report.html"})]}
 
           :test     {:target    :node-test

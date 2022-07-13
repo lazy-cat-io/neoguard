@@ -75,6 +75,11 @@
           (sci/eval-string ctx)))))
 
 
+(defn as-markdown-code-block
+  ([s] (gstr/format "```clojure\n%s\n```" (pr-str s)))
+  ([prefix s] (gstr/format "%s\n```clojure\n%s\n```" prefix (pr-str s))))
+
+
 (defn eval-file
   [url]
   (-> (if (str/starts-with? url "http")
